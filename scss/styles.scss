@@ -1,0 +1,87 @@
+$primary: black;
+$secondary: white;
+
+// Organisms
+body {
+    // Paddings
+    margin: 0; padding: 0;
+
+    // Layout
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    align-content: center;
+    justify-content: center;
+
+    // Typography
+    font-family: monospace;
+
+    // Colors
+    background-color: $primary;
+    color: $secondary;
+}
+
+// Molecules
+#container {
+    // Paddings
+    gap: 10px;
+
+    // Layout
+    max-width: 700px;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(50px, 150px));
+    grid-template-rows: minmax(50px, 150px) 50px repeat(5, minmax(50px, 150px));
+    align-content: center;
+    align-items: stretch;
+}
+
+// Atoms
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: span 2;
+
+    border: 1px solid $secondary;
+    font-size: 5em;
+}
+
+.button:hover {
+
+    // Colors
+    background-color: darkorange;
+}
+
+.button-plus {
+    background-color: darkgreen;
+}
+
+.button-clear {
+    background-color: red;
+}
+
+.button-submit {
+    background-color: darkgreen;
+}
+
+.display {
+    grid-column: span 6;
+}
+
+.display > div {
+    width: 100%;
+    text-align: right;
+}
+
+.category {
+    // Layout
+    grid-column: span 1; // Override "span 2" for button because I want keep button properties but not spanning
+
+    // Colors
+    background-color: deeppink;
+}
+
+.small {
+    // Typography
+    font-size: 2em;
+}
