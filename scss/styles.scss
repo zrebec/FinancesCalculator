@@ -36,12 +36,12 @@ body {
     gap: 2px;
     height: 100vh;
     overflow: hidden;
-    background-color: green;
+    
     // Layout
     max-width: 700px;
     display: grid;
     grid-template-columns: repeat(6, minmax(50px, 150px));
-    grid-template-rows: minmax(50px, 1fr) 0.7fr repeat(5, minmax(50px, 1fr));
+    grid-template-rows: minmax(50px, 1fr) 0.6fr repeat(5, minmax(50px, 1fr));
     align-content: center;
     align-items: stretch;
     justify-content: flex-end;

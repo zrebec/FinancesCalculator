@@ -21,14 +21,13 @@ body {
   gap: 2px;
   height: 100vh;
   overflow: hidden;
-  background-color: green;
   max-width: 700px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(50px, 150px))[6];
       grid-template-columns: repeat(6, minmax(50px, 150px));
-  -ms-grid-rows: minmax(50px, 1fr) 0.7fr (minmax(50px, 1fr))[5];
-      grid-template-rows: minmax(50px, 1fr) 0.7fr repeat(5, minmax(50px, 1fr));
+  -ms-grid-rows: minmax(50px, 1fr) 0.6fr (minmax(50px, 1fr))[5];
+      grid-template-rows: minmax(50px, 1fr) 0.6fr repeat(5, minmax(50px, 1fr));
   -ms-flex-line-pack: center;
       align-content: center;
   -webkit-box-align: stretch;
