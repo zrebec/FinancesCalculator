@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Run in fullscreen mode as apple mobile web app -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    
     <link rel="stylesheet" href="css/styles.css">
     <script src="page.js"></script>
     <title>Finances Calculator</title>
@@ -11,12 +15,30 @@
     <div id="container">
 
         <div class="button display"><div id="display">0,00</div></div>
-        <div id="cat-groceries" class="button category small"><i class="fa fa-shopping-basket"></i></div>
-        <div id="cat-drugstore" class="button category small"><i class="fa fa-pump-soap"></i></div>
-        <div id="cat-health" class="button category small"><i class="fa fa-heartbeat"></i></div>
-        <div id="cat-restaurants" class="button category small"><i class="fa fa-utensils"></i></div>
-        <div id="cat-transport" class="button category small"><i class="fa fa-car"></i></div>
-        <div id="cat-others" class="button category small"><i class="fa fa-wallet"></i></div>
+        <div id="cat-groceries" class="button category small">
+            <!-- <i class="fa fa-shopping-basket"></i> -->
+            🧺
+        </div>
+        <div id="cat-drugstore" class="button category small">
+            <!-- <i class="fa fa-pump-soap"></i> -->
+            🧹
+        </div>
+        <div id="cat-health" class="button category small">
+            <!-- <i class="fa fa-heartbeat"></i> -->
+            💗
+        </div>
+        <div id="cat-restaurants" class="button category small">
+            <!-- <i class="fa fa-utensils"></i> -->
+            🍟
+        </div>
+        <div id="cat-transport" class="button category small">
+            <!-- <i class="fa fa-car"></i> -->
+            🚋
+        </div>
+        <div id="cat-others" class="button category small">
+            <!-- <i class="fa fa-wallet"></i> -->
+            💶
+        </div>
       
         <!-- Numbers 1, 2, 3 -->
         <div onclick="addNumber('1')" class="button">1</div>
@@ -38,11 +60,17 @@
         <div onclick="addNumber('0')" class="button">0</div>
         <div onclick="addNumber(',')" class="button">,</div>
 
-        <div onclick="addNumber('clear')" class="button small button-clear"><i class="fa fa-trash"></i></div>
+        <div onclick="addNumber('clear')" class="button small button-clear">
+            <!-- <i class="fa fa-trash"></i> -->
+            🧹
+        </div>
         <div onclick="addNumber('submit')" class="button button-submit small">OK</div>
-        <div onclick="addNumber('undo')" class="button small"><i class="fa fa-undo"></i></div>
+        <div onclick="addNumber('undo')" class="button small x2">
+            <!-- <i class="fa fa-undo"></i> -->
+            ↩
+        </div>
         
       </div>
-      <script src="https://kit.fontawesome.com/a77db2ea98.js" crossorigin="anonymous"></script>
+      <!-- <script src="https://kit.fontawesome.com/a77db2ea98.js" crossorigin="anonymous"></script> -->
 </body>
 </html>

@@ -1,15 +1,24 @@
+// Typography variables
+$font-size: 5rem;
+$smaller-font-size: 2.2rem;
+
+// Color variables
 $primary: black;
 $secondary: white;
+$category-color: $secondary;
+$button-clear-color: darkred;
+$button-submit-color: green;
+$button-plus-color: darkgreen;
 
 // Organisms
 body {
     // Paddings
     margin: 0; padding: 0;
-
     // Layout
     display: flex;
     width: 100%;
     height: 100vh;
+    overflow: auto;
     align-content: center;
     justify-content: center;
 
@@ -24,15 +33,18 @@ body {
 // Molecules
 #container {
     // Paddings
-    gap: 10px;
-
+    gap: 2px;
+    height: 100vh;
+    overflow: hidden;
+    background-color: green;
     // Layout
     max-width: 700px;
     display: grid;
     grid-template-columns: repeat(6, minmax(50px, 150px));
-    grid-template-rows: minmax(50px, 150px) 50px repeat(5, minmax(50px, 150px));
+    grid-template-rows: minmax(50px, 1fr) 0.7fr repeat(5, minmax(50px, 1fr));
     align-content: center;
     align-items: stretch;
+    justify-content: flex-end;
 }
 
 // Atoms
@@ -43,7 +55,7 @@ body {
     grid-column: span 2;
 
     border: 1px solid $secondary;
-    font-size: 5em;
+    font-size: $font-size;
 }
 
 .button:hover {
@@ -53,15 +65,15 @@ body {
 }
 
 .button-plus {
-    background-color: darkgreen;
+    background-color: $button-plus-color;
 }
 
 .button-clear {
-    background-color: red;
+    background-color: $button-clear-color;
 }
 
 .button-submit {
-    background-color: darkgreen;
+    background-color: $button-submit-color;
 }
 
 .display {
@@ -78,10 +90,14 @@ body {
     grid-column: span 1; // Override "span 2" for button because I want keep button properties but not spanning
 
     // Colors
-    background-color: deeppink;
+    background-color: $category-color;
 }
 
 .small {
     // Typography
-    font-size: 2em;
+    font-size: $smaller-font-size;
+}
+
+.x2 {
+    font-size: $font-size * 2;
 }
