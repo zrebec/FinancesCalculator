@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Run in fullscreen mode as apple mobile web app -->
+    <!-- Run in fullscreen mode as mobile web app -->
     <meta name="apple-mobile-web-app-capable" content="yes">
-    
+    <meta name="mobile-web-app-capable" content="yes">
+
     <link rel="stylesheet" href="css/styles.css">
     <script src="page.js"></script>
     <title>Finances Calculator</title>
@@ -14,7 +15,7 @@
 <body>
     <div id="container">
 
-        <div class="button display"><div id="display">0,00</div></div>
+        <div class="button display"><div id="display" onclick="toggleFullScreen();" class="outgoing">0,00</div></div>
         <div id="cat-groceries" class="button category small">
             <!-- <i class="fa fa-shopping-basket"></i> -->
             🧺
@@ -41,31 +42,31 @@
         </div>
       
         <!-- Numbers 1, 2, 3 -->
-        <div onclick="addNumber('1')" class="button">1</div>
-        <div onclick="addNumber('2')" class="button">2</div>
-        <div onclick="addNumber('3')" class="button">3</div>
+        <div onclick="addNumber('1')" class="button number">1</div>
+        <div onclick="addNumber('2')" class="button number">2</div>
+        <div onclick="addNumber('3')" class="button number">3</div>
       
         <!-- Numbers 4, 5, 6 -->
-        <div onclick="addNumber('4')" class="button">4</div>
-        <div onclick="addNumber('5')" class="button">5</div>
-        <div onclick="addNumber('6')" class="button">6</div>
+        <div onclick="addNumber('4')" class="button number">4</div>
+        <div onclick="addNumber('5')" class="button number">5</div>
+        <div onclick="addNumber('6')" class="button number">6</div>
       
         <!-- Numbers 7, 8, 9 -->
-        <div onclick="addNumber('7')" class="button">7</div>
-        <div onclick="addNumber('8')" class="button">8</div>
-        <div onclick="addNumber('9')" class="button">9</div>
+        <div onclick="addNumber('7')" class="button number">7</div>
+        <div onclick="addNumber('8')" class="button number">8</div>
+        <div onclick="addNumber('9')" class="button number">9</div>
       
         <!-- Chars +, 0, . -->
         <div id="button-plus" onclick="addNumber('+')" class="button">+</div>
-        <div onclick="addNumber('0')" class="button">0</div>
-        <div onclick="addNumber(',')" class="button">,</div>
+        <div onclick="addNumber('0')" class="button number">0</div>
+        <div onclick="addNumber(',')" class="button number">,</div>
 
-        <div onclick="addNumber('clear')" class="button small button-clear">
+        <div onclick="addNumber('clear')" class="button button-clear small">
             <!-- <i class="fa fa-trash"></i> -->
-            🧹
+            CLEAR
         </div>
         <div onclick="addNumber('submit')" class="button button-submit small">OK</div>
-        <div onclick="addNumber('undo')" class="button small x2">
+        <div onclick="addNumber('undo')" class="button number x2">
             <!-- <i class="fa fa-undo"></i> -->
             ↩
         </div>

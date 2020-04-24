@@ -1,27 +1,36 @@
-body {
-  margin: 0;
+html, body {
+  height: 100%;
+}
+
+html {
+  font-size: 5pt;
+}
+
+html, body, #container {
   padding: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
   width: 100%;
-  height: 100vh;
-  overflow: auto;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  margin: 0 auto;
   font-family: monospace;
   background-color: black;
   color: white;
 }
 
+@media only screen and (min-width: 800px) {
+  html {
+    font-size: 10pt;
+  }
+}
+
 #container {
   gap: 2px;
-  height: 100vh;
+  height: calc(100vh - 20px);
   overflow: hidden;
-  max-width: 700px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(50px, 150px))[6];
@@ -33,9 +42,9 @@ body {
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .button {
@@ -49,11 +58,11 @@ body {
       -ms-flex-align: center;
           align-items: center;
   grid-column: span 2;
-  border: 1px solid white;
+  border: 1px solid #555;
   font-size: 5rem;
 }
 
-.button:hover {
+.number:hover {
   background-color: darkorange;
 }
 
@@ -76,6 +85,14 @@ body {
 .display > div {
   width: 100%;
   text-align: right;
+}
+
+.display > div.outgoing {
+  color: red;
+}
+
+.display > div.incoming {
+  color: green;
 }
 
 .category {
