@@ -12,66 +12,68 @@
     <script src="page.js"></script>
     <title>Finances Calculator</title>
 </head>
-<body>
+<body onload="init()">
     <div id="container">
+        <div id="content">
 
-        <div class="button display"><div id="display" onclick="toggleFullScreen();" class="outgoing">0,00</div></div>
-        <div id="cat-groceries" class="button category small">
-            <!-- <i class="fa fa-shopping-basket"></i> -->
-            🧺
-        </div>
-        <div id="cat-drugstore" class="button category small">
-            <!-- <i class="fa fa-pump-soap"></i> -->
-            🧹
-        </div>
-        <div id="cat-health" class="button category small">
-            <!-- <i class="fa fa-heartbeat"></i> -->
-            💗
-        </div>
-        <div id="cat-restaurants" class="button category small">
-            <!-- <i class="fa fa-utensils"></i> -->
-            🍟
-        </div>
-        <div id="cat-transport" class="button category small">
-            <!-- <i class="fa fa-car"></i> -->
-            🚋
-        </div>
-        <div id="cat-others" class="button category small">
-            <!-- <i class="fa fa-wallet"></i> -->
-            💶
-        </div>
-      
-        <!-- Numbers 1, 2, 3 -->
-        <div onclick="addNumber('1')" class="button number">1</div>
-        <div onclick="addNumber('2')" class="button number">2</div>
-        <div onclick="addNumber('3')" class="button number">3</div>
-      
-        <!-- Numbers 4, 5, 6 -->
-        <div onclick="addNumber('4')" class="button number">4</div>
-        <div onclick="addNumber('5')" class="button number">5</div>
-        <div onclick="addNumber('6')" class="button number">6</div>
-      
-        <!-- Numbers 7, 8, 9 -->
-        <div onclick="addNumber('7')" class="button number">7</div>
-        <div onclick="addNumber('8')" class="button number">8</div>
-        <div onclick="addNumber('9')" class="button number">9</div>
-      
-        <!-- Chars +, 0, . -->
-        <div id="button-plus" onclick="addNumber('+')" class="button">+</div>
-        <div onclick="addNumber('0')" class="button number">0</div>
-        <div onclick="addNumber(',')" class="button number">,</div>
-
-        <div onclick="addNumber('clear')" class="button button-clear small">
-            <!-- <i class="fa fa-trash"></i> -->
-            CLEAR
-        </div>
-        <div onclick="addNumber('submit')" class="button button-submit small">OK</div>
-        <div onclick="addNumber('undo')" class="button number x2">
-            <!-- <i class="fa fa-undo"></i> -->
-            ↩
-        </div>
+            <div class="button display"><div id="display" onclick="toggleFullScreen();" class="outgoing">0,00</div></div>
+            <div id="cat-groceries" class="button category small">
+                <!-- <i class="fa fa-shopping-basket"></i> -->
+                🧺
+            </div>
+            <div id="cat-drugstore" class="button category small">
+                <!-- <i class="fa fa-pump-soap"></i> -->
+                🧹
+            </div>
+            <div id="cat-health" class="button category small">
+                <!-- <i class="fa fa-heartbeat"></i> -->
+                💗
+            </div>
+            <div id="cat-restaurants" class="button category small">
+                <!-- <i class="fa fa-utensils"></i> -->
+                🍟
+            </div>
+            <div id="cat-transport" class="button category small">
+                <!-- <i class="fa fa-car"></i> -->
+                🚋
+            </div>
+            <div id="cat-others" class="button category small">
+                <!-- <i class="fa fa-wallet"></i> -->
+                💶
+            </div>
         
-      </div>
+            <!-- Numbers 1, 2, 3 -->
+            <div onclick="addNumber('1')" class="button number">1</div>
+            <div onclick="addNumber('2')" class="button number">2</div>
+            <div onclick="addNumber('3')" class="button number">3</div>
+        
+            <!-- Numbers 4, 5, 6 -->
+            <div onclick="addNumber('4')" class="button number">4</div>
+            <div onclick="addNumber('5')" class="button number">5</div>
+            <div onclick="addNumber('6')" class="button number">6</div>
+        
+            <!-- Numbers 7, 8, 9 -->
+            <div onclick="addNumber('7')" class="button number">7</div>
+            <div onclick="addNumber('8')" class="button number">8</div>
+            <div onclick="addNumber('9')" class="button number">9</div>
+        
+            <!-- Chars +, 0, . -->
+            <div id="button-plus" onclick="addNumber('+')" class="button">+</div>
+            <div onclick="addNumber('0')" class="button number">0</div>
+            <div onclick="addNumber(',')" class="button number">,</div>
+
+            <div onclick="addNumber('clear')" class="button button-clear small">
+                <!-- <i class="fa fa-trash"></i> -->
+                CLEAR
+            </div>
+            <div onclick="addNumber('submit')" class="button button-submit small">OK</div>
+            <div onclick="addNumber('undo')" class="button number x2">
+                <!-- <i class="fa fa-undo"></i> -->
+                ↩
+            </div>
+            
+        </div>
+    </div>
       <!-- <script src="https://kit.fontawesome.com/a77db2ea98.js" crossorigin="anonymous"></script> -->
 </body>
 </html>

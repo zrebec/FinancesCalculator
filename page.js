@@ -1,11 +1,16 @@
+const numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', ','];
+const special = ['+', 'undo', 'submit', 'clear'];
+const truncDecimalPlaces = 2;
+const allowedInputs = numbers.concat(special);
 var total = '';
 var incoming = false; // Identifies if value is incoming of (default) outgoing
-var numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', ','];
-var special = ['+', 'undo', 'submit', 'clear'];
-var allowedInputs = numbers.concat(special);
+var display;
+
+function init () {
+    display = document.getElementById('display');
+}
 
 function toggleFullScreen() {
-    console.log();
     
     if(document.fullscreen === false) {
         document.body.requestFullscreen();
@@ -14,6 +19,16 @@ function toggleFullScreen() {
         return;
     }
     
+}
+
+const truncateByDecimalPlace = (value, numDecimalPlaces) =>
+  Math.trunc(value * Math.pow(10, numDecimalPlaces)) / Math.pow(10, numDecimalPlaces)
+
+function resetTotal() {
+    total = '';
+    display.innerHTML = '0,00';
+
+    // TODO We should also reset income
 }
 
 window.addEventListener("keypress", function(e) {
@@ -50,7 +65,6 @@ function addNumber(x) {
         return false;
     }
 
-    display = document.getElementById('display');
     switch(x) {
         case 'undo':
             // Undo button delete last char
@@ -60,24 +74,51 @@ function addNumber(x) {
             case 'submit':
                 // Submit button save changes to database
 
+                // 1. Convert to number and truncate to 2 decimal places
+                total = truncateByDecimalPlace(parseFloat(total.replace(',', '.')), truncDecimalPlaces);
+
+                // 2. try convert variable into Number;
+                if (typeof total !== 'number' ||  isNaN(total) ) {
+                    console.log ('Value ' + total + ' is '+ typeof total +'. It\'s not a valid number');
+                    
+                    resetTotal();
+                    return false;
+                }
+
+                // 3. Check if n <> 0 because we don't want saving 0 to database
+                if (total === 0 ) {
+                    console.log ('Zero number. Skipping save to database');
+                    resetTotal();
+                    return false;
+                }
+
+                // 4. Check if sum is incoming or outgoing
+                if (incoming === false) {
+                    // This is outgoing value
+                    total *= -1;
+                }
+
                 // Just fake logic yet
+                display.innerHTML = (total < 0 ? 'OUTGOING ' : 'INCOMING') + ' ' + total.toString();
                 total = '';
-                display.innerHTML = 'SAVING...';
 
                 // Incoming set to true after save to database because we want
+
+
                 // already outgoing then
                 incoming = true;
                 addNumber('+');
 
                 // Logic for submit
+                return true;
                 break;
             case 'clear':
                 // Clear button delete total string and set display to default value
-                total = '';
-                display.innerHTML = '0.00';
+                resetTotal();
                 break;
             case '+':
                 // Incoming instead of default outgoing
+
                 if (incoming === true) {
                     document.getElementById('button-plus').className = 
                         document.getElementById('button-plus').className.replace(' button-plus', '');

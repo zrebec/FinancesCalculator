@@ -9,7 +9,7 @@ $smaller-font-size: 2.2rem;
 // Color variables
 $primary: black;
 $secondary: white;
-$category-color: $secondary;
+$category-color: rgba(#000, 0.75);
 $button-clear-color: darkred;
 $button-submit-color: green;
 $button-plus-color: darkgreen;
@@ -26,7 +26,7 @@ html {
     font-size: 5pt;
 }
 
-html, body, #container {
+html, body, #content {
     // Paddings
     padding: 0; margin: 0;
     box-sizing: border-box;
@@ -54,11 +54,19 @@ body {
     }
 }
 
-// Molecules
 #container {
-    // Paddings
-    gap: 2px;
+    display: flex;
+    max-width: 750px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
     height: calc(100vh - 20px);
+}
+
+// Molecules
+#content {
+    // Paddings
+    gap: 1rem;
     overflow: hidden;
 
     // Layout
@@ -69,17 +77,29 @@ body {
     align-content: center;
     align-items: stretch;
     justify-content: center;
+
+    //Colors
+    background: linear-gradient(-45deg, rgba(171,65,14,1) 0%, rgba(9,9,121,1) 39%, rgba(29,113,130,1) 75%, rgb(206, 227, 231) 98%);
 }
 
 // Atoms
 .button {
+    // Layout
     display: flex;
     justify-content: center;
     align-items: center;
     grid-column: span 2;
 
-    border: $calc-element-border-width solid $calc-element-border-color;
+    // Global settings
+    cursor: pointer;
+
+    // Typography
     font-size: $font-size;
+
+    // Colors
+    border: $calc-element-border-width solid $calc-element-border-color;
+    background: rgba($color: #000000, $alpha: 0.5);    
+
 }
 
 .number:hover {
