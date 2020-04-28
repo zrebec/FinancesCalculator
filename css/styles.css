@@ -1,12 +1,12 @@
-html, body {
+html,
+body {
   height: 100%;
+  font-size: 16pt;
 }
 
-html {
-  font-size: 5pt;
-}
-
-html, body, #content {
+html,
+body,
+#content {
   padding: 0;
   margin: 0;
   -webkit-box-sizing: border-box;
@@ -14,43 +14,36 @@ html, body, #content {
 }
 
 body {
-  width: 100%;
   margin: 0 auto;
   font-family: monospace;
   background-color: black;
   color: white;
 }
 
-@media only screen and (min-width: 800px) {
-  html {
-    font-size: 10pt;
-  }
-}
-
 #container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  max-width: 750px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   margin: 0 auto;
   height: calc(100vh - 20px);
 }
 
 #content {
-  gap: 1rem;
+  gap: 0rem;
   overflow: hidden;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(50px, 150px))[6];
-      grid-template-columns: repeat(6, minmax(50px, 150px));
-  -ms-grid-rows: minmax(50px, 1fr) 0.6fr (minmax(50px, 1fr))[5];
-      grid-template-rows: minmax(50px, 1fr) 0.6fr repeat(5, minmax(50px, 1fr));
+  width: 100%;
+  -ms-grid-columns: (minmax(auto, 100px))[6];
+      grid-template-columns: repeat(6, minmax(auto, 100px));
+  -ms-grid-rows: minmax(1rem, 1fr) 1fr (minmax(1rem, 1fr))[5];
+      grid-template-rows: minmax(1rem, 1fr) 1fr repeat(5, minmax(1rem, 1fr));
   -ms-flex-line-pack: center;
       align-content: center;
   -webkit-box-align: stretch;
@@ -74,7 +67,7 @@ body {
           align-items: center;
   grid-column: span 2;
   cursor: pointer;
-  font-size: 5rem;
+  font-size: 16pt;
   border: 1px solid #555;
   background: rgba(0, 0, 0, 0.5);
 }
@@ -118,10 +111,44 @@ body {
 }
 
 .small {
-  font-size: 2.2rem;
+  font-size: 8pt;
 }
 
 .x2 {
-  font-size: 10rem;
+  font-size: 32pt;
+}
+
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 1rem;
+  }
+  #container {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+  }
+  #content {
+    gap: 0rem;
+    overflow: hidden;
+    width: 300px;
+    display: -ms-grid;
+    display: grid;
+    min-height: calc(100vh);
+    -ms-grid-columns: (minmax(auto, 100px))[6];
+        grid-template-columns: repeat(6, minmax(auto, 100px));
+    -ms-grid-rows: (minmax(auto, 1fr))[7];
+        grid-template-rows: repeat(7, minmax(auto, 1fr));
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
